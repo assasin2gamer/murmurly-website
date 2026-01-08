@@ -25,7 +25,7 @@ export default function DropdownCards() {
     {
       question: "Can I customize the features",
       answer:
-        "Yes. You’ll be able to create custom nodes and integrations. We are aiming for a C++ and Python SDK."
+        "Yes. You’ll be able to create custom nodes and integrations. We are actively building a C++ and Python SDK. If you have specific requests, please reach out!"
     },
     {
       question: "Can my team use it together?",
@@ -49,8 +49,9 @@ export default function DropdownCards() {
         zIndex: 5,
         position: "relative",
         padding: "40px",
-        maxWidth: "800px",
+        maxWidth: "100vw",
         margin: "0 auto"
+        
       }}
     >
       {faqs.map((item, index) => {
