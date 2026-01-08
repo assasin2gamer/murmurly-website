@@ -59,7 +59,7 @@ body, html {
   height: 50vh;
 }
 
-.node-content { width: 200px; height: 50vh; color: white; user-select: none; overflow: hidden;}
+.node-content { width: 20vh; height: 50vh; color: white; user-select: none; overflow: hidden;}
 
 .node-header-text { 
   height: 40px; 
