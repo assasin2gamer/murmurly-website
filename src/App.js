@@ -43,7 +43,7 @@ function App() {
         </nav>
 
         <header className="hero">
-          <h1>Real-Time Intelligence — <br/><span>Reliable, Traceable, Actionable.</span></h1>
+          <h1>Real-Time Financial Intelligence — <br/><span>Reliable, Traceable, Actionable.</span></h1>
           <p>Murmurly provides you intelligence for modeling, meetings, reports, and more.</p>
           <div className="hero-btns">
             <button className="btn-p">Get Early Access</button>
