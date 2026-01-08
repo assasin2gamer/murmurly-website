@@ -50,7 +50,6 @@ export default function DropdownCards() {
         position: "relative",
         padding: "40px",
         maxWidth: "90vw",
-        margin: "0 auto"
         
       }}
     >

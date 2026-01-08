@@ -239,7 +239,15 @@ body, html {
 @media (max-width: 768px) {
   .nav-items-desktop { display: none; }
   .menu-toggle { display: block; }
-
+  .fo-inner {
+    transform: scale(0.8);
+    transform-origin:
+     top left;
+  }
+  .node-content {
+    -webkit-user-select: none;
+    user-select: none;
+  }
   .hero h1 { font-size: 40px; }
   .hero { padding: 150px 20px 0; height: auto; }
 
