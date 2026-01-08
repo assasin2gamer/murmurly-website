@@ -30,10 +30,11 @@ body, html {
   inset: 0; 
   z-index: 1; 
   pointer-events: none; 
-  width: 100vw; 
+  height: 100vh;
 }
 
 .grid-overlay {
+  
   position: absolute; 
   inset: 0; 
   background-size: 40px 40px; 
@@ -41,29 +42,30 @@ body, html {
   background-image: 
     linear-gradient(to right, #1e2229 1px, transparent 1px), 
     linear-gradient(to bottom, #1e2229 1px, transparent 1px);
+  
 }
 
 .engine-svg { 
   width: 100%; 
   height: 100%; 
   overflow: visible; 
+  
 }
 
 .hidden { visibility: hidden; }
 
 /* 4. NODE UI & PORTS */
 .fo-inner { 
-  width: 100%; 
   perspective: 1000px; 
-  height: 50vh;
+  height: 100vh;
+
 }
 
-.node-content { width: 20vh; color: white; user-select: none; overflow: hidden;}
+.node-content {   height: 100vh; width: 20vh; color: white; user-select: none; overflow: hidden;}
 
 .node-header-text { 
   height: 40px; 
   display: flex; 
-  align-items: center; 
   justify-content: center; 
   font-size: 10px; 
   font-weight: 900; 
@@ -184,7 +186,7 @@ body, html {
   position: relative; 
   z-index: 10;
   background: linear-gradient(to bottom, transparent, var(--bg) 600px);
-  min-height: 50vh;
+  min-height: 100vh;
   width: 100vw;
 }
 

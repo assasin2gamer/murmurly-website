@@ -45,11 +45,11 @@ export default function DropdownCards() {
     <div
       style={{
         backgroundColor: "white",
-        height: "100vh",
+        minHeight: "100vh",
         zIndex: 5,
         position: "relative",
         padding: "40px",
-        width: "100vw",
+        maxWidth: "90vw",
         margin: "0 auto"
         
       }}
