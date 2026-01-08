@@ -54,7 +54,7 @@ function App() {
 
       <div style={{backgroundColor:'white', height:'100vh', zIndex:'5', position:'relative'}}>
         {/* Additional page content can go here */}
-        <DropdownCards />
+        <DropdownCards style={{width:'100%'}}/>
       </div>
       
 
