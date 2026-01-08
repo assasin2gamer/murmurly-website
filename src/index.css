@@ -51,25 +51,15 @@ body, html {
 
 .hidden { visibility: hidden; }
 
-/* Change 50vh to absolute pixels or 100% */
+/* 4. NODE UI & PORTS */
 .fo-inner { 
   width: 100%; 
-  height: 100%; /* Let the foreignObject tag define the height */
+  height: 100%; 
   perspective: 1000px; 
-  display: flex; /* Helps with alignment */
-  align-items: flex-start;
+  height: 50vh;
 }
 
-.node-content { 
-  width: 200px; 
-  height: auto; /* Allow content to dictate height, or use a fixed PX value */
-  min-height: 250px; 
-  color: white; 
-  user-select: none; 
-  overflow: hidden;
-  background: var(--node-body); /* Ensure background is tied to the content */
-  border-radius: 8px; /* Optional: matches modern UI */
-}
+.node-content { width: 200px; height: 50vh; color: white; user-select: none; overflow: hidden;}
 
 .node-header-text { 
   height: 40px; 
