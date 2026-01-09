@@ -1,0 +1,113 @@
+/* ... keep your existing about CSS ... */
+
+.about-team {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-team h2 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 60px;
+  letter-spacing: -1px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+}
+
+.team-card {
+  background: var(--node-body); /* Using the same dark color as nodes */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent); /* Blue or Green accent */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.member-image-wrap {
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+  overflow: hidden;
+}
+
+.member-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(40%);
+  transition: filter 0.3s ease;
+}
+
+.team-card:hover img {
+  filter: grayscale(0%);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, var(--node-body));
+}
+
+.member-info {
+  padding: 30px;
+}
+
+.member-info h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.member-role {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--success); /* Using the green pulse color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.member-info p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.member-socials {
+  display: flex;
+  gap: 15px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.member-socials svg:hover {
+  color: white;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-team h2 {
+    font-size: 32px;
+  }
+}
