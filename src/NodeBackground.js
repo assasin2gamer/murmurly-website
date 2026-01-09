@@ -80,7 +80,7 @@ const NodeBackground = () => {
       
       <AnimatePresence>
         {phase === 'prompt' && (
-          <motion.div className="prompt-overlay" exit={{ opacity: 0, scale: 0.9 }} style={{ position:'absolute', top:'-30vh'}}>
+          <motion.div className="prompt-overlay" exit={{ opacity: 0, scale: 0.9 }} style={{ position:'absolute'}}>
             <div className="prompt-window">{"> "} {text}<span className="blinker">|</span></div>
           </motion.div>
         )}

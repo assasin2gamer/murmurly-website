@@ -91,6 +91,7 @@ body, html {
   align-items: center; 
   justify-content: center; 
   z-index: 100;
+  top:-30vh;
 }
 
 .prompt-window {
@@ -233,9 +234,9 @@ body, html {
 /* 10. RESPONSIVE LOGIC */
 @media (max-width: 768px) {
   .nav-items-desktop { display: none; }
-  .menu-toggle { display: block; }
-  
-  .hero h1 { font-size: 40px; padding-top: 20vh;}
+  .menu-toggle { display: block; top:-15vh; }
+  .prompt-overlay {top: -50vh;}
+  .hero h1 { font-size: 40px; padding-top: 15vh;}
   .hero { padding: 150px 20px 0; height: auto; }
 
   .nav-items-mobile {
