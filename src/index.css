@@ -54,29 +54,19 @@ body, html {
 .hidden { visibility: hidden; }
 
 /* 4. NODE UI & PORTS */
-.fo-inner { 
-  perspective: 1000px; 
-  height: 100%;
-  
-}
 
-.node-content {width: 20vh; color: white; user-select: none; overflow: hidden;}
+.fo-inner { perspective: 1000px; height: 100%; }
 
-.node-header-text { 
-  height: 40px; 
-  display: flex; 
-  justify-content: center; 
-  font-size: 10px; 
-  font-weight: 900; 
-  text-transform: uppercase; 
-  letter-spacing: 0.5px; 
-}
+/* DO NOT use vw or vh inside foreignObject on iOS */
+.node-content {width: 10vw; height: 30vh; color: white; user-select: none; overflow: hidden;}
+/* Header stays stable across devices */
+.node-header-text { display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; height: 40px;}
 
 .node-ports { display: flex; justify-content: space-between; padding: 0 10px; }
 .p-col { display: flex; flex-direction: column; }
 
 .p-row, .p-row-rev { 
-  height: 32px; 
+  height: 30px; 
   display: flex; 
   align-items: center; 
   gap: 8px; 
@@ -238,16 +228,7 @@ body, html {
 @media (max-width: 768px) {
   .nav-items-desktop { display: none; }
   .menu-toggle { display: block; }
-  .fo-inner {
-    transform: scale(0.8);
-    transform-origin:
-     top left;
-    width: 100vw;
-  }
-  .node-content {
-    -webkit-user-select: none;
-    user-select: none;
-  }
+ 
   .hero h1 { font-size: 40px; }
   .hero { padding: 150px 20px 0; height: auto; }
 
