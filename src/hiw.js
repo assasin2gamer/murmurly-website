@@ -129,8 +129,7 @@ const Connection = ({ from, to, delay }) => {
   );
 };
 
-const Hiw = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Hiw = ({ isMenuOpen, setIsMenuOpen, logo }) => {
 
   const [phase, setPhase] = useState('prompt');
   const [text, setText] = useState("");
