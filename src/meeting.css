@@ -202,6 +202,12 @@
   .meeting-header { padding: 10px; }
   .meeting-view { height: 25vh;}
 }
+@media (max-height: 680px) {
+  .video-grid { grid-template-columns: 1fr 1fr; } /* Keep 2x2 for very small screens */
+  .meeting-header { padding: 10px; }
+  .meeting-view { height: 35vh;}
+  .agent-brain-panel { height: 80%; }
+}
 
 /* 1. The background grid should NEVER intercept a scroll or click */
 .hiw-grid, .meeting-grid-bg, .grid-bg {

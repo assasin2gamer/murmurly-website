@@ -220,3 +220,13 @@ body {
   margin-left: -2px;
   box-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
 }
+
+@media (max-height: 680px) {
+  .text-block {
+    font-size: 20px;
+  } 
+  .content-section h2 {
+    padding-top: 10px;
+    font-size: 20px;
+  }
+}
