@@ -236,7 +236,7 @@ body, html {
   .nav-items-desktop { display: none; }
   .menu-toggle { display: block; top:-15vh; }
   .prompt-overlay {top: -50vh;}
-  .hero h1 { font-size: 40px; padding-top: 15vh;}
+  .hero h1 { font-size: 40px; padding-top: 13vh;}
   .hero { padding: 150px 20px 0; height: auto; }
 
   .nav-items-mobile {
