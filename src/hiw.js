@@ -69,7 +69,6 @@ const getPinPos = (nodeId, label, side) => {
 };
 const ScrollIndicator = () => {
   const { scrollYProgress } = useScroll();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // [0, 0.05] -> The "Buffer": Stay at 1 opacity until 5% of the page is scrolled
   // [0.05, 0.15] -> The "Fade": Transition from 1 to 0 opacity
@@ -131,6 +130,8 @@ const Connection = ({ from, to, delay }) => {
 };
 
 const Hiw = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [phase, setPhase] = useState('prompt');
   const [text, setText] = useState("");
   const fullText = "import data from s3 and show me age to retention prediction...";
