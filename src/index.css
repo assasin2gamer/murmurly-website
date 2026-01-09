@@ -213,6 +213,7 @@ body, html {
   border-radius: 50px; 
   font-weight: 700; 
   cursor: pointer; 
+  text-decoration: none;
 }
 .cta-nav-white { padding: 10px 24px; font-weight: 800; color:white; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
 
@@ -233,8 +234,8 @@ body, html {
 @media (max-width: 768px) {
   .nav-items-desktop { display: none; }
   .menu-toggle { display: block; }
- 
-  .hero h1 { font-size: 40px; }
+  
+  .hero h1 { font-size: 40px; padding-top: 30vh;}
   .hero { padding: 150px 20px 0; height: auto; }
 
   .nav-items-mobile {
