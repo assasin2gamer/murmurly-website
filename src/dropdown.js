@@ -50,7 +50,7 @@ export default function DropdownCards() {
         position: "relative",
         padding: "40px",
         maxWidth: "90vw",
-        
+       
       }}
     >
       {faqs.map((item, index) => {

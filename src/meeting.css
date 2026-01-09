@@ -188,7 +188,7 @@
 @media (min-width: 1024px) {
   .meeting-main-layout {
     flex-direction: row; /* Side-by-Side */
-    padding: 0 40px 40px 40px;
+    
   }
   .meeting-view { flex: 1; justify-content: center; }
   .agent-brain-panel { width: 360px; height: 100%; }
@@ -200,6 +200,7 @@
 @media (max-width: 480px) {
   .video-grid { grid-template-columns: 1fr 1fr; } /* Keep 2x2 for very small screens */
   .meeting-header { padding: 10px; }
+  .meeting-view { height: 25vh;}
 }
 
 /* 1. The background grid should NEVER intercept a scroll or click */

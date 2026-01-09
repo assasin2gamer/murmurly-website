@@ -13,25 +13,25 @@ const MeetingAgent = () => {
       await delay(1500);
       setActiveStep(1);
       setTranscript("Sarah, can you sync the new S3 data with the CRM by Friday?");
-      await delay(3000);
+      await delay(2000);
 
       setActiveStep(2);
       addLog("Speech-to-Text confirmed.");
       addLog("Intent detected: Task Assignment.");
-      await delay(2000);
+      await delay(1000);
 
       setActiveStep(3);
       addLog("Searching team calendar...");
       addLog("Checking CRM API endpoints...");
-      await delay(2500);
+      await delay(500);
 
       setActiveStep(4);
       addLog("Action: Created Jira Task #992.");
       addLog("Action: Notification sent.");
-      await delay(2000);
+      await delay(1000);
 
       setActiveStep(5);
-      await delay(4000);
+      await delay(1000);
 
       setLogs([]);
       setTranscript("");
