@@ -86,7 +86,7 @@ const NodeBackground = () => {
         )}
       </AnimatePresence>
 
-      <svg viewBox="0 0 1450 900"  className={`engine-svg ${phase === 'prompt' ? 'hidden' : ''}`} >
+      <svg viewBox="0 0 1450 900" preserveAspectRatio="xMidYMid meet"  className={`engine-svg ${phase === 'prompt' ? 'hidden' : ''}`} >
         {phase !== 'prompt' && (
           <>
             {/* COMPLETED CONNECTION LIST (21 Links) */}
