@@ -49,7 +49,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/hiw" element={<Hiw isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} logo={logo} />} />
+        <Route path="/hiw" element={<Hiw />} />
         <Route path="/about_us" element={<About />} />
       </Routes>
     </Router>

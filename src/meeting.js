@@ -48,7 +48,7 @@ const MeetingAgent = () => {
     <div style={{justifyContent: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <div className="text-block" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop:'30px'}}>
           <h2>Real-Time Agents</h2>
-          <p style={{width: '40%', textAlign: 'center'}}>Connecting and understanding your team in a revolutionary new way.</p>
+          <p style={{width: '80%', textAlign: 'center'}}>Connecting and understanding your team in a revolutionary new way.</p>
         </div>
       <div className="meeting-grid-bg" />
 

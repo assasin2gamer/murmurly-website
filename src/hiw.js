@@ -129,12 +129,13 @@ const Connection = ({ from, to, delay }) => {
   );
 };
 
-const Hiw = ({ isMenuOpen, setIsMenuOpen, logo }) => {
+const Hiw = () => {
 
   const [phase, setPhase] = useState('prompt');
   const [text, setText] = useState("");
   const fullText = "import data from s3 and show me age to retention prediction...";
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+   
   useEffect(() => {
     let timer;
 
