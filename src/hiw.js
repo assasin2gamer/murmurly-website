@@ -6,6 +6,11 @@ import Nav from './nav';
 import MeetingAgent from './meeting';
 import logo from './logo.png';
 import { useScroll, useTransform } from 'framer-motion';
+
+
+const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
 // --- Configuration & Theme ---
 const COLORS = {
   wire: "#4b5563",
