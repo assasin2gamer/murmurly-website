@@ -8,148 +8,124 @@ const MeetingAgent = () => {
   const [transcript, setTranscript] = useState("");
   const [logs, setLogs] = useState([]);
 
-  // Animation Sequence
   useEffect(() => {
     const sequence = async () => {
       await delay(1500);
-      
-      // 1. Human Speaking
       setActiveStep(1);
-      setTranscript("Sarah, can you make sure we sync the new S3 data with the CRM by Friday?");
+      setTranscript("Sarah, can you sync the new S3 data with the CRM by Friday?");
       await delay(3000);
 
-      // 2. Agent Listening & Processing
       setActiveStep(2);
       addLog("Speech-to-Text confirmed.");
       addLog("Intent detected: Task Assignment.");
       await delay(2000);
 
-      // 3. Thinking / Agentic Loop
       setActiveStep(3);
-      addLog("Searching team calendar for Sarah...");
-      addLog("Checking CRM API for endpoint 'sync_v2'...");
+      addLog("Searching team calendar...");
+      addLog("Checking CRM API endpoints...");
       await delay(2500);
 
-      // 4. Executing Action
       setActiveStep(4);
       addLog("Action: Created Jira Task #992.");
-      addLog("Action: Notification sent to Sarah.");
+      addLog("Action: Notification sent.");
       await delay(2000);
 
-      // 5. Final Confirmation
       setActiveStep(5);
       await delay(4000);
 
-      // Reset
       setLogs([]);
       setTranscript("");
       setActiveStep(0);
       sequence();
     };
-
     sequence();
   }, []);
 
-  const addLog = (msg) => setLogs(prev => [...prev, { id: Date.now(), msg }]);
+  const addLog = (msg) => setLogs(prev => [...prev.slice(-3), { id: Date.now(), msg }]);
   const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
   return (
-    <div className="meeting-root">
+    <div style={{justifyContent: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <div className="text-block" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop:'30px'}}>
+          <h2>Real-Time Agents</h2>
+          <p style={{width: '40%', textAlign: 'center'}}>Connecting and understanding your team in a revolutionary new way.</p>
+        </div>
       <div className="meeting-grid-bg" />
 
-      {/* Header Info */}
+      {/* Header */}
       <div className="meeting-header">
         <div className="status-badge">
-          <div className="pulse-red" /> 11:02 AM • LIVE STRATEGY CALL
+          <div className="pulse-red" /> 11:02 AM • LIVE CALL
         </div>
       </div>
 
-      <div className="meeting-container">
+      <div className="meeting-main-layout">
         
-        {/* LEFT: Participant Grid */}
-        <div className="participants-section">
+        {/* TOP/LEFT: Video Section */}
+        <div className="meeting-view">
           <div className="video-grid">
-            <Participant name="Alex (Host)" active={false} />
-            <Participant name="Sarah" active={false} />
-            <Participant name="Jordan" active={activeStep === 1} talking={activeStep === 1} />
+            <Participant name="Alex" talking={false} />
+            <Participant name="Sarah" talking={false} />
+            <Participant name="Jordan" talking={activeStep === 1} />
             
-            {/* The AI Agent Participant */}
             <motion.div 
-              className={`agent-participant ${activeStep > 1 ? 'active-agent' : ''}`}
+              className={`agent-tile ${activeStep > 1 ? 'active' : ''}`}
               animate={{ borderColor: activeStep === 3 ? '#00ffcc' : 'rgba(255,255,255,0.1)' }}
             >
-              <div className="agent-avatar">
-                <Bot size={40} color={activeStep > 1 ? "#00ffcc" : "#666"} />
-                {activeStep === 3 && <motion.div className="thinking-ring" animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} />}
+              <div className="agent-icon-wrap">
+                <Bot size={window.innerWidth < 768 ? 24 : 32} color={activeStep > 1 ? "#00ffcc" : "#666"} />
+                {activeStep === 3 && <motion.div className="thinking-spinner" animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} />}
               </div>
-              <div className="part-name">AI ASSISTANT</div>
-              {activeStep > 1 && (
-                <div className="agent-status-label">
-                  {activeStep === 2 && "Listening..."}
-                  {activeStep === 3 && "Thinking..."}
-                  {activeStep >= 4 && "Task Executed"}
-                </div>
-              )}
+              <span className="tile-name">AI AGENT</span>
             </motion.div>
           </div>
 
-          {/* Live Transcript Bubble */}
+          {/* Transcript positioned relatively below/on-top of video */}
           <AnimatePresence>
             {transcript && (
               <motion.div 
-                className="live-transcript"
-                initial={{ opacity: 0, y: 20 }}
+                className="transcript-bubble"
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
               >
-                <div className="trans-meta">Jordan speaking:</div>
-                "{transcript}"
+                <span className="speaker">Jordan:</span> {transcript}
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
-        {/* RIGHT: Agent "Brain" / Workflow */}
-        <div className="agent-workflow-panel">
-          <div className="panel-header">
-            <Zap size={16} /> INTERNAL MONOLOGUE
+        {/* BOTTOM/RIGHT: Agent Logic */}
+        <div className="agent-brain-panel">
+          <div className="brain-header">
+            <Zap size={14} /> INTERNAL MONOLOGUE
           </div>
           
-          <div className="workflow-steps">
-            <StepIcon icon={<MessageSquare />} label="NLP Parser" active={activeStep === 2} done={activeStep > 2} />
-            <div className="step-connector" />
-            <StepIcon icon={<Database />} label="Context Retrieval" active={activeStep === 3} done={activeStep > 3} />
-            <div className="step-connector" />
-            <StepIcon icon={<Mail />} label="Tool Execution" active={activeStep === 4} done={activeStep > 4} />
+          <div className="mini-workflow">
+            <StepIcon icon={<MessageSquare size={16}/>} active={activeStep === 2} done={activeStep > 2} />
+            <div className="line" />
+            <StepIcon icon={<Database size={16}/>} active={activeStep === 3} done={activeStep > 3} />
+            <div className="line" />
+            <StepIcon icon={<Mail size={16}/>} active={activeStep === 4} done={activeStep > 4} />
           </div>
 
-          <div className="agent-logs">
-            <AnimatePresence>
-              {logs.map((log) => (
-                <motion.div 
-                  key={log.id} 
-                  className="log-entry"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                >
-                  <CheckCircle size={12} color="#00ffcc" />
-                  <span>{log.msg}</span>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+          <div className="log-window">
+            {logs.map((log) => (
+              <motion.div key={log.id} className="log-row" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                <CheckCircle size={12} color="#00ffcc" /> {log.msg}
+              </motion.div>
+            ))}
           </div>
 
-          {activeStep === 5 && (
-            <motion.div 
-              className="action-card"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-            >
-              <div className="card-top">JIRA TASK CREATED</div>
-              <div className="card-title">Sync CRM & S3 Data</div>
-              <div className="card-meta">Assigned to: Sarah • Due: Friday</div>
-            </motion.div>
-          )}
+          <AnimatePresence>
+            {activeStep === 5 && (
+              <motion.div className="result-toast" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+                <div className="toast-accent">NEW JIRA TASK</div>
+                <strong>Sync CRM Data</strong>
+                <p>Assignee: Sarah</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
       </div>
@@ -157,22 +133,24 @@ const MeetingAgent = () => {
   );
 };
 
-// Sub-components for cleaner code
 const Participant = ({ name, talking }) => (
-  <div className={`participant-card ${talking ? 'talking' : ''}`}>
-    <div className="p-avatar"><User size={32} color="#555" /></div>
-    <div className="part-name">{name}</div>
-    {talking && <div className="audio-wave">
-      {[1,2,3,4].map(i => <motion.div key={i} animate={{ height: [4, 12, 4] }} transition={{ repeat: Infinity, duration: 0.5, delay: i*0.1 }} />)}
-    </div>}
+  <div className={`video-tile ${talking ? 'talking' : ''}`}>
+    <div className="avatar-circle"><User size={24} color="#555" /></div>
+    <span className="tile-name">{name}</span>
+    {talking && (
+      <div className="voice-indicator">
+        {[1,2,3].map(i => <motion.div key={i} animate={{ height: [2, 10, 2] }} transition={{ repeat: Infinity, duration: 0.5, delay: i*0.1 }} />)}
+      </div>
+    )}
   </div>
 );
 
-const StepIcon = ({ icon, label, active, done }) => (
-  <div className={`step-item ${active ? 'active' : ''} ${done ? 'done' : ''}`}>
-    <div className="step-icon-circle">{icon}</div>
-    <div className="step-label">{label}</div>
+const StepIcon = ({ icon, active, done }) => (
+  <div className={`brain-step ${active ? 'active' : ''} ${done ? 'done' : ''}`}>
+    {icon}
   </div>
 );
+
+const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
 export default MeetingAgent;

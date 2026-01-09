@@ -128,22 +128,40 @@ const Connection = ({ from, to, delay }) => {
 const Hiw = () => {
   const [phase, setPhase] = useState('prompt');
   const [text, setText] = useState("");
-  const fullText = "import data from s3 and run linear regression...";
+  const fullText = "import data from s3 and show me age to retention prediction...";
 
   useEffect(() => {
+    let timer;
+
     if (phase === 'prompt') {
+      // RESET text at start of loop
+      setText("");
       let i = 0;
-      const timer = setInterval(() => {
+      const typingInterval = setInterval(() => {
         setText(fullText.slice(0, i));
         i++;
         if (i > fullText.length) {
-          clearInterval(timer);
-          setTimeout(() => setPhase('nodes'), 1000);
+          clearInterval(typingInterval);
+          // Wait 1.5s after typing before showing nodes
+          timer = setTimeout(() => setPhase('nodes'), 1500);
         }
       }, 50);
-      return () => clearInterval(timer);
-    } else if (phase === 'nodes') {
-      setTimeout(() => setPhase('report'), 4000);
+      return () => {
+        clearInterval(typingInterval);
+        clearTimeout(timer);
+      };
+    } 
+    
+    else if (phase === 'nodes') {
+      // Wait 5s for the node build animation to finish, then show report
+      timer = setTimeout(() => setPhase('report'), 5000);
+      return () => clearTimeout(timer);
+    } 
+    
+    else if (phase === 'report') {
+      // Show the final report/success for 6s, then loop back to start
+      timer = setTimeout(() => setPhase('prompt'), 6000);
+      return () => clearTimeout(timer);
     }
   }, [phase]);
 
@@ -263,7 +281,7 @@ const Hiw = () => {
       <div className="content-section">
         <div className="text-block" style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           <h2>Automated Data Pipelines</h2>
-          <p style={{width: '40%'}}>Connecting your data to production-ready regression models has never been this visual. Our engine handles the boilerplate of normalization and splitting automatically.</p>
+          <p style={{width: '100%'}}>Connecting your data to production-ready regression models has never been this visual. Our engine handles the boilerplate of normalization and splitting automatically.</p>
         </div>
       </div>
       </main>

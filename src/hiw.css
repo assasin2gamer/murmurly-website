@@ -129,9 +129,8 @@ body {
 .content-section {  
   margin: 0 auto;
   position: absolute;
-padding-bottom: 10px;
   text-align: center;
-  top: 70%;
+  top: 10vh;
   width: 100vw;
   justify-content: center;
   height: 100vh;
