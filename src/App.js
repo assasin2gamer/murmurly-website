@@ -22,6 +22,7 @@ function App() {
 
             {/* Desktop Navigation - Hidden on Mobile via CSS */}
             <div className="nav-items-desktop">
+              <a href="#whitepaper">Whitepaper</a>
               <a href="#features">Features</a>
               <button className="cta-nav">Get Access</button>
             </div>
@@ -39,6 +40,7 @@ function App() {
           <div className={`nav-items-mobile ${isMenuOpen ? 'open' : ''}`} style={{ display: isMenuOpen ? 'flex' : 'none' }}>
             <button className="cta-nav">Features</button>
             <button className="cta-nav">Get Access</button>
+            <button className="cta-nav">Whitepaper</button>
           </div>
         </nav>
 

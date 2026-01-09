@@ -25,11 +25,12 @@ body, html {
 }
 
 /* 3. TECHNICAL BACKGROUND (GRID & SVG) */
-.bg-canvas { 
-  position: fixed; 
-  inset: 0; 
-  z-index: 1; 
-  pointer-events: none; 
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid-overlay {
@@ -44,21 +45,24 @@ body, html {
   
 }
 
-.engine-svg { 
-  width: 100%; 
-  height: 100%; 
-  padding-left: 10vw;
-
+.engine-svg {
+  width: 100%;
+  height: auto;
+  max-height: 100svh;
+  display: block;
 }
 
 .hidden { visibility: hidden; }
 
 /* 4. NODE UI & PORTS */
 
-.fo-inner { perspective: 1000px; height: 100%; }
-
+.fo-inner {
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+}
 /* DO NOT use vw or vh inside foreignObject on iOS */
-.node-content {width: 200px;  color: white; user-select: none; overflow: hidden;}
+.node-content {width: 200px;   height: auto; color: white; user-select: none; overflow: hidden;}
 /* Header stays stable across devices */
 .node-header-text { display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; height: 40px;}
 
@@ -210,6 +214,7 @@ body, html {
   font-weight: 700; 
   cursor: pointer; 
 }
+.cta-nav-white { padding: 10px 24px; font-weight: 800; color:white; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
 
 .cta-nav { padding: 10px 24px; }
 .btn-p { padding: 18px 40px; font-weight: 800; }
