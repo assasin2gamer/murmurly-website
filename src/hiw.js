@@ -8,7 +8,6 @@ import logo from './logo.png';
 import { useScroll, useTransform } from 'framer-motion';
 
 
-const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
 // --- Configuration & Theme ---
@@ -70,7 +69,8 @@ const getPinPos = (nodeId, label, side) => {
 };
 const ScrollIndicator = () => {
   const { scrollYProgress } = useScroll();
-  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   // [0, 0.05] -> The "Buffer": Stay at 1 opacity until 5% of the page is scrolled
   // [0.05, 0.15] -> The "Fade": Transition from 1 to 0 opacity
   const opacity = useTransform(scrollYProgress, [0, 0.05, 0.15], [1, 1, 0]);
