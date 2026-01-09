@@ -3,6 +3,7 @@ import logo from './logo.png';
 
 
 export default function Nav({ isMenuOpen, setIsMenuOpen, logo }) {
+  
   return (
     <nav className="navbar">
           <div className="nav-container">
@@ -16,7 +17,7 @@ export default function Nav({ isMenuOpen, setIsMenuOpen, logo }) {
             <div className="nav-items-desktop">
               <Link to="/hiw">How It Works</Link>
               <Link to="/about_us">About Us</Link>
-              <a href="#features">Features</a>
+              <Link to="/features">Features</Link>
               <button className="cta-nav">Get Access</button>
             </div>
 

@@ -3,13 +3,16 @@ import Nav from './nav';
 import logo from './logo.png';
 import { Github, Linkedin, Twitter } from 'lucide-react'; // Optional: for social icons
 import './about.css';
+import { useState } from 'react';
 import stephen from './images/stephen.png';
 import greg from './images/greg.png';
 
 export default function About() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   return (
     <div className="about-root">
-      <Nav logo={logo} />
+      <Nav logo={logo} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       
       <section className="about-hero">
         <h1>About Murmurly</h1>
