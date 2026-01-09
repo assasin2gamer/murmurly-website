@@ -15,6 +15,7 @@ export default function Nav({ isMenuOpen, setIsMenuOpen, logo }) {
 
             <div className="nav-items-desktop">
               <Link to="/hiw">How It Works</Link>
+              <Link to="/about_us">About Us</Link>
               <a href="#features">Features</a>
               <button className="cta-nav">Get Access</button>
             </div>
@@ -34,6 +35,7 @@ export default function Nav({ isMenuOpen, setIsMenuOpen, logo }) {
             <Link to="/hiw" onClick={() => setIsMenuOpen(false)} className="cta-nav">How It Works</Link>
             <Link to="/features" onClick={() => setIsMenuOpen(false)} className="cta-nav">Features</Link>
             <Link to="/get-access" onClick={() => setIsMenuOpen(false)} className="cta-nav">Get Access</Link>
+            <Link to="/about_us" onClick={() => setIsMenuOpen(false)} className="cta-nav">About Us</Link>
           </div>
         </nav>
 );

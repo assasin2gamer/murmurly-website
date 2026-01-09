@@ -6,6 +6,7 @@ import './index.css';
 import DropdownCards from './dropdown';
 import Hiw from './hiw';
 import Nav from './nav';
+import About from './about_us';
 
 function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,6 +50,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hiw" element={<Hiw />} />
+        <Route path="/about_us" element={<About />} />
       </Routes>
     </Router>
   );
