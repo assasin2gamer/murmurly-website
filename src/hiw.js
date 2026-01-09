@@ -172,7 +172,7 @@ const Hiw = () => {
 
   return (
     <div className="how-it-works-page">
-     <Nav logo={logo}/>
+     <Nav logo={logo} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
       <main className="canvas-container">
         <div className="grid-bg" />
