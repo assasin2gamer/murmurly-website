@@ -33,7 +33,7 @@ More than just a notetaker, Murmurly is infrastructure - the reasoning layer tha
               <div className="image-overlay" />
             </div>
             <div className="member-info">
-              <h3>Greg Jospeh</h3>
+              <h3>Greg Joseph</h3>
               <span className="member-role">Co-Founder and CEO </span>
               <p>
                 7-Year NFL Veteran with experience performing under extreme pressure. Building Murmurly to bring real-time intelligence and clarity to high-stakes conversations, drawing from years of elite performance, decision-making, and accountability at the highest level.
