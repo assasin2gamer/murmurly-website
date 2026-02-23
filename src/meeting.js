@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, Bot, MessageSquare, Zap, CheckCircle, Database, Mail } from 'lucide-react';
 import './meeting.css';
-import { head } from 'framer-motion/client';
 
 const MeetingAgent = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -152,6 +151,5 @@ const StepIcon = ({ icon, active, done }) => (
   </div>
 );
 
-const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
 export default MeetingAgent;

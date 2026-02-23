@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import logo from './logo.png';
 
 
 export default function Nav({ isMenuOpen, setIsMenuOpen, logo }) {
